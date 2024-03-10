@@ -25,14 +25,14 @@ Bond - to calculate the amount you'll pay on a home loan \n\
 
         # Perform the selected interest calculation
         if INTEREST_TYPE == "simple":
-            SIMPLE_COMPOUND = initial_deposit*(1 + r * num_of_years)
+            result = initial_deposit*(1 + r * num_of_years)
         elif INTEREST_TYPE == "compound":
-            result = initial_deposit * (1 + r) ** num_of_years
+            results = initial_deposit * (1 + r) ** num_of_years
         else:
             # Raise an error if an invalid interest type is entered
             raise ValueError("Invalid interest type selected")
 
-        print(f"Your interest earned over {num_of_years} years will be R{result:.2f}")
+        print(f"Your interest earned over {num_of_years} years will be R{result if INTEREST_TYPE == 'simple' else results:.2f}")
         # Printing a formatted f-string outcome to user rounded to two decimal places.
 
 
